@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rockpapperscissors</title>
+</head>
+<body>
+    <p>Click here</p>
+
+    <button onclick="computerPlay()">Click here</button>
+
+    <p id = "demo"></p>
+    <script>
+        function computerPlay() {
+            let xt = Math.floor((Math.random() * 3) + 1)
+            if(xt == 1){
+                return "Rock";
+            }
+            
+            else if(xt == 2){
+                return "Paper"
+            }
+            else if(xt == 3) {
+                return "Scissors"
+            }
+        }
+
+        function plays(player, computer) {
+            let first = player.toLowerCase();
+            let second = computer.toLowerCase();
+            if((first == "rock") && (second == "rock")) {
+                return "Draw play again!";
+            }
+            else if((first == "rock") && (second == "paper")) {
+                return "You Lose! Paper beats Rock";
+            }
+            else if((first == "rock") && (second == "scissors")) {
+                return "You win! Rock beats Scissors";
+            }
+            else if((first == "paper") && (second == "paper")) {
+                return "Draw play again!";
+            }
+            else if((first == "paper") && (second == "rock")) {
+                return "You win! Paper beats rock";
+            }
+            else if((first == "paper") && (second == "scissors")) {
+                return "You Lose! paper scissors beat paper";
+            }
+            else if((first == "scissors") && (second == "rock")) {
+                return "You Lose! Rock beats scissors";
+            }
+            else if((first == "scissors") == (second == "scissors")) {
+                return "Draw play again!";
+            }
+            else if((first == "scissors") == (second == "paper")) {
+                return "You win! Scissors beats Paper";
+            }
+        }
+
+        console.log("hehrh");
+
+        function game(){
+            let x = 0;
+            let count = 0;
+            while(x < 5) {
+            let mike = prompt("Rock Paper Scissors");
+            let wil = computerPlay();
+            let eat = plays(mike, wil);
+            console.log(eat);
+            if(eat == ("You win! Scissors beats Paper" || "You win! Paper beats rock" || "You win! Rock beats Scissors")){count++;}
+            x++;
+            }
+            if(count >= 3){console.log("You win this round");}
+            else {console.log("You Lose this round");}
+             
+        }
+
+        console.log(game());
+    </script>
+</body>
+</html>
